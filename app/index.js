@@ -1,6 +1,9 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 const cp = require('child_process');
 
+// https://github.com/sindresorhus/electron-debug
+require('electron-debug')({showDevTools: true});
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
@@ -11,9 +14,6 @@ function createWindow () {
 
   // and load the index.html of the app.
   win.loadURL(`file://${__dirname}/index.html`)
-
-  // Open the DevTools.
-  win.webContents.openDevTools()
 
   // Emitted when the window is closed.
   win.on('closed', () => {

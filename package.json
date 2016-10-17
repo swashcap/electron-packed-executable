@@ -1,9 +1,12 @@
 {
-  "name": "y",
+  "name": "electron-packed-executable",
   "version": "1.0.0",
   "description": "Test if Electron can fire up packed executables",
-  "main": "index.js",
+  "main": "app/index.js",
   "scripts": {
+    "build": "npm run clean && electron-packager ./ --out builds",
+    "build:asar": "npm run build -- --asar",
+    "clean": "rm -rf builds",
     "start": "electron ."
   },
   "repository": {
@@ -21,6 +24,11 @@
   },
   "homepage": "https://github.com/swashcap/electron-packed-executable#readme",
   "devDependencies": {
-    "electron": "^1.4.3"
+    "electron": "^1.4.3",
+    "electron-packager": "^8.1.0"
+  },
+  "private": true,
+  "dependencies": {
+    "electron-debug": "^1.0.1"
   }
 }
