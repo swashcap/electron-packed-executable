@@ -1,0 +1,26 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "Test if Electron can fire up packed executables",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swashcap/electron-packed-executable.git"
+  },
+  "keywords": [
+    "electron",
+    "executable"
+  ],
+  "author": "Cory Reed <swashcap@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/swashcap/electron-packed-executable/issues"
+  },
+  "homepage": "https://github.com/swashcap/electron-packed-executable#readme",
+  "devDependencies": {
+    "electron": "^1.4.3"
+  }
+}
