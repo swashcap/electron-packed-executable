@@ -9,5 +9,29 @@
     We are using node <script>document.write(process.versions.node)</script>,
     Chrome <script>document.write(process.versions.chrome)</script>,
     and Electron <script>document.write(process.versions.electron)</script>.
+
+    <br />
+    <button id="button">Get random number</button>
+    <h2>Output:</h2>
+    <div id="output"></div>
+
+    <script>
+      (function() {
+        const { ipcRenderer } = require('electron');
+        const button = document.getElementById('button');
+        const output = document.getElementById('output');
+
+        ipcRenderer.on('error', setText);
+        ipcRenderer.on('set-random-number', setText);
+
+        button.addEventListener('click', () => {
+          ipcRenderer.send('get-random-number');
+        }, false);
+
+        function setText(event, text) {
+          output.textContent = text;
+        }
+      })();
+    </script>
   </body>
 </html>
